@@ -12,11 +12,11 @@ object Defs {
   def main(args: Array[String]): Unit = {
     val sparkConf = new SparkConf().setAppName("aas").setMaster("local[2]")
     var sc = new SparkContext(sparkConf)
-    sc.setLogLevel("DEBUG")
 //    val rdd = sc.textFile("hdfs://192.168.75.83:8020/usr/clyang/block_1.csv")
     val rdd = sc.textFile("E:\\clyang\\资料\\学习资料\\aas文件\\block_1.csv")
-    val header =rdd.take(1)
-    header.foreach(println)
+    val noHeaders = rdd.filter(!_.contains("id_1"))
+    val parsedData = noHeaders.map(parse).cache()
+    parsedData.foreach(println)
   }
 
   def toDouble(input:String): Double ={
