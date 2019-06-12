@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="c405c0db-4db2-4387-8fd5-619e34e9758d" name="Default Changelist" comment="调整pom文件">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CustomReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CustomReceiver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/spark/aas/Defs.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/spark/aas/Defs.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aas/Defs$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aas/Defs$$anonfun$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aas/Defs$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aas/Defs$$anonfun$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aas/Defs$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aas/Defs$$anonfun$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aas/Defs$$anonfun$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aas/Defs$$anonfun$main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/aas/Defs$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aas/Defs$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aas/MatchData$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aas/MatchData$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aas/MatchData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aas/MatchData.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,11 +37,20 @@
           <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spark/aas/Defs.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+            <state relative-caret-position="332">
+              <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -215,6 +231,7 @@
         <option value="$PROJECT_DIR$/src/log4j.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/spark/aas/Defs.scala" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -365,7 +382,7 @@
       <workItem from="1559543027726" duration="698000" />
       <workItem from="1559609733296" duration="1621000" />
       <workItem from="1560303805388" duration="12196000" />
-      <workItem from="1560326303783" duration="2788000" />
+      <workItem from="1560326303783" duration="4991000" />
     </task>
     <task id="LOCAL-00001" summary="调整pom文件">
       <created>1560326789531</created>
@@ -381,16 +398,24 @@
       <option name="project" value="LOCAL" />
       <updated>1560329289410</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add  ignore file">
+      <created>1560330874426</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1560330874426</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37113000" />
+    <option name="totallyTimeSpent" value="39316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17352185" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17352185" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -404,7 +429,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.38413098" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.28211588" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Tool Output" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -432,7 +457,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="调整pom文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="调整pom文件" />
+    <MESSAGE value="add  ignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add  ignore file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -625,8 +651,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/spark/aas/Defs.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        <state relative-caret-position="332">
+          <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>

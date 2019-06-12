@@ -10,7 +10,8 @@ import org.apache.spark.{SparkConf, SparkContext}
 object Defs {
 
   def main(args: Array[String]): Unit = {
-    val sparkConf = new SparkConf().setAppName("aas").setMaster("local[2]")
+
+    val sparkConf = new SparkConf().setAppName("aas").setMaster("local[1]")
     var sc = new SparkContext(sparkConf)
     val rdd = sc.textFile("hdfs://192.168.75.83:8020/usr/clyang/block_1.csv")
 //    val rdd = sc.textFile("E:\\clyang\\资料\\学习资料\\aas文件\\block_1.csv")
