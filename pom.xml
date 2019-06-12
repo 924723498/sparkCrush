@@ -12,7 +12,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <scala.spark.version>2.11</scala.spark.version>
         <scala.version>${scala.spark.version}.8</scala.version>
-        <spark.version>2.2.0</spark.version>
+        <spark.version>2.4.0</spark.version>
         <hadoop.version>2.7.7</hadoop.version>
         <hbase.version>2.1.4</hbase.version>
         <kafka.version>2.2.0</kafka.version>
