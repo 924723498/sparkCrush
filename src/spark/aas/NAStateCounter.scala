@@ -27,7 +27,7 @@ class NAStateCounter extends Serializable {
   }
 
 
-  override def toString = s"NAStateCounter($missing, $status)"
+  override def toString = s"NAStateCounter(missing:$missing, status:$status)"
 
 
 }
