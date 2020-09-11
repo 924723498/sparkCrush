@@ -57,7 +57,7 @@ object MusicRecommend{
 
     val bArtistsAlias = sc.broadcast(artistsAlias)
 
-    val trainData = rawUserArtists.map{
+    /*val trainData = rawUserArtists.map{
       line =>
         val Array(userId,artistsId,count)=line.split(' ').map(_.toInt)
         val finalArtistsId = bArtistsAlias.value.getOrElse(artistsId,artistsId)
@@ -77,7 +77,7 @@ object MusicRecommend{
       case(id,name)=>
         recomendedProductIds.contains(id)
     }.values.collect().foreach(println)
-
+*/
 
     /*
      * (90,-0.840640664100647,-0.1471276879310608,-0.4095822870731354,-0.06496176868677139,
@@ -102,7 +102,7 @@ object MusicRecommend{
 
     artistsById.filter{case (id,name)=>existsProducts.contains(id)}
       .values.collect().foreach(println)*/
-
+    RunRecommender.evaluate(sc,rawUserArtists,rawArtistsAlias)
 
 
   }
