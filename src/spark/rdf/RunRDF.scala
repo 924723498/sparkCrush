@@ -18,7 +18,7 @@ object RunRDF {
 
   def main(args: Array[String]): Unit = {
     val sc = new SparkContext(new SparkConf().setAppName("RDF"))
-    val rawData = sc.textFile("hdfs:///user/ds/covtype.data")
+    val rawData = sc.textFile("E:\\clyang\\资料\\学习资料\\第四章数据\\covtype.data\\covtype.data")
 
     val data = rawData.map { line =>
       val values = line.split(',').map(_.toDouble)
@@ -34,10 +34,10 @@ object RunRDF {
     testData.cache()
 
     simpleDecisionTree(trainData, cvData)
-    randomClassifier(trainData, cvData)
+    /*randomClassifier(trainData, cvData)
     evaluate(trainData, cvData, testData)
     evaluateCategorical(rawData)
-    evaluateForest(rawData)
+    evaluateForest(rawData)*/
 
     trainData.unpersist()
     cvData.unpersist()
@@ -45,14 +45,14 @@ object RunRDF {
   }
 
   def simpleDecisionTree(trainData: RDD[LabeledPoint], cvData: RDD[LabeledPoint]): Unit = {
-    // Build a simple default DecisionTreeModel
-    val model = DecisionTree.trainClassifier(trainData, 7, Map[Int,Int](), "gini", 4, 100)
+    // Build a simple default DecisionTreeModel  7  分类类别数  gini entropy
+    val model = DecisionTree.trainClassifier(trainData, 7, Map[Int,Int](), "entropy", 4, 100)
 
     val metrics = getMetrics(model, cvData)
 
     println(metrics.confusionMatrix)
     println(metrics.precision)
-
+    // 准确率   和召回率
     (0 until 7).map(
       category => (metrics.precision(category), metrics.recall(category))
     ).foreach(println)
