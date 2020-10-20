@@ -49,7 +49,7 @@ object Defs {
     //获取价值大的数据进去取值计算  对于差异小 丢失数据多的可以忽略
     def naz(d:Double)=if(Double.NaN.equals(d)) 0.0 else d
 
-    case class  Scored(md:MatchData,score: Double)
+    case class  Scored(md:MatchData, score: Double)
     val ct = parsedData.map(md=>{
       val score = Array(2,5,6,7,8).map(i=>naz(md.array(i))).sum
       Scored(md,score)

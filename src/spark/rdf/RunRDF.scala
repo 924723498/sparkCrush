@@ -27,10 +27,13 @@ object RunRDF {
       LabeledPoint(label, featureVector)
     }
 
+
+
+
     // Split into 80% train, 10% cross validation, 10% test
     val Array(trainData, cvData, testData) = data.randomSplit(Array(0.8, 0.1, 0.1))
     trainData.cache()
-    cvData.cache()
+    cvData.cache()  //0.6799423937456067
     testData.cache()
 
     simpleDecisionTree(trainData, cvData)
@@ -46,10 +49,10 @@ object RunRDF {
 
   def simpleDecisionTree(trainData: RDD[LabeledPoint], cvData: RDD[LabeledPoint]): Unit = {
     // Build a simple default DecisionTreeModel  7  分类类别数  gini entropy
-    val model = DecisionTree.trainClassifier(trainData, 7, Map[Int,Int](), "entropy", 4, 100)
+    val model = DecisionTree.trainClassifier(trainData, 7, Map[Int,Int](), "gini", 20, 300)
 
     val metrics = getMetrics(model, cvData)
-
+    // 根据平分线来判断准确性
     println(metrics.confusionMatrix)
     println(metrics.precision)
     // 准确率   和召回率

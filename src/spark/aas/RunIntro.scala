@@ -14,7 +14,7 @@ import org.apache.spark.sql.functions._
 /**
   * 为数据定义实体类
   * */
-case class MatchData(
+case class MatchDataRun(
                       id_1: Int,
                       id_2: Int,
                       cmp_fname_c1: Option[Double],
