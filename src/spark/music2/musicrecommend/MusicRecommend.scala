@@ -1,7 +1,7 @@
 package spark.music2.musicrecommend
 
 import org.apache.spark.broadcast.Broadcast
-import org.apache.spark.ml.recommendation.ALS
+import org.apache.spark.ml.recommendation.{ALS, ALSModel}
 import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 import org.apache.spark.sql.functions._
 
@@ -17,7 +17,7 @@ import scala.util.Random
   */
 object MusicRecommend {
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession.builder().getOrCreate()
+    val spark = SparkSession.builder().config("spark.sql.crossJoin.enabled", "true").getOrCreate()
     spark.sparkContext.setCheckpointDir("tmp")
     val base = "E:\\clyang\\资料\\学习资料\\第三章数据\\profiledata_06-May-2005\\"
     val rawUserArtistData = spark.read.textFile(base+"user_artist_data.txt")
@@ -67,6 +67,21 @@ class MusicRecommend(private val spark:SparkSession){
     }.toDF("user","artist","count")
   }
 
+  def makeRecommendations(model: ALSModel, userId: Int, howMany: Int):DataFrame= {
+    val toRecommend = model.itemFactors.
+      select($"id".as("artist")).
+      withColumn("user", lit(userId))
+    model.transform(toRecommend).
+      select("artist", "prediction").
+      orderBy($"prediction".desc).
+      limit(howMany)
+
+
+
+  }
+
+
+
   def model(
              rawUserArtistData: Dataset[String],
              rawArtistData: Dataset[String],
@@ -97,6 +112,22 @@ class MusicRecommend(private val spark:SparkSession){
     val artistById = buildArtistByID(rawArtistData)
 
     artistById.filter($"id"  isin (existingArtistIds:_*) ).show()
+
+    val topRecommendations = makeRecommendations(model,userId,5)
+    topRecommendations.show()
+    val recommendedArtistIds = topRecommendations.select("artist").as[Int].collect()
+    artistById.filter($"id" isin(recommendedArtistIds:_*)).show()
+
+
+    model.userFactors.unpersist()
+    model.itemFactors.unpersist()
+
+
+
+
+
+
+
 
   }
 
