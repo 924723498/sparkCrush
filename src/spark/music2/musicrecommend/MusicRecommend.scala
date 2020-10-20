@@ -4,7 +4,7 @@ import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.ml.recommendation.{ALS, ALSModel}
 import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 import org.apache.spark.sql.functions._
-
+import spark.util.PropUtils._
 import scala.util.Random
 
 /**
@@ -19,7 +19,7 @@ object MusicRecommend {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder().config("spark.sql.crossJoin.enabled", "true").getOrCreate()
     spark.sparkContext.setCheckpointDir("tmp")
-    val base = "E:\\clyang\\资料\\学习资料\\第三章数据\\profiledata_06-May-2005\\"
+    val base = readProp("music.base.url")
     val rawUserArtistData = spark.read.textFile(base+"user_artist_data.txt")
     val rawArtistData = spark.read.textFile(base+"artist_data.txt")
     val rawArtistAlias = spark.read.textFile(base +"artist_alias.txt")
