@@ -1,2 +1,6 @@
 /target/
-*.class
+mode-music-als/
+spark-warehouse/
+tmp/
+.idea/
+*.log*
