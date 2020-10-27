@@ -5,7 +5,7 @@ import java.util.Properties
 
 object PropUtils {
   val properties = new Properties();
-  properties.load(new BufferedReader(new InputStreamReader(Thread.currentThread().getContextClassLoader.getResourceAsStream("application.properties"),"gbk")))
+  properties.load(new BufferedReader(new InputStreamReader(Thread.currentThread().getContextClassLoader.getResourceAsStream("resource/application.properties"),"utf-8")))
 
   def readProp(key:String)={
     properties.get(key)
