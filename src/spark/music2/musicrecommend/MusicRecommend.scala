@@ -54,10 +54,12 @@ class MusicRecommend(private val spark:SparkSession){
                      predictFunction:(DataFrame =>DataFrame)):Double = {
     val positivePredictions = predictFunction(positiveData.select("user","artist"))
       .withColumnRenamed("prediction","positivePrediction")
+    val negativeData = positiveData.select("user","artist").as[(Int,Int)].
+      groupByKey{case (user,_) =>user }.flatMapGroups{case (userId,userIdAndPosArtistIDs)=>
+      val random = new Random()
+        val posItemIDSet = userIdAndPosArtistIDs.map{ case (_,artist)=>artist }.toSet
+    }
 
-
-
-    2.2
   }
 
   /**
